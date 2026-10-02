@@ -1,0 +1,38 @@
+{
+  "site": "https://www.medicus-health.com",
+  "readAt": "2026-09-29T17:39:28.346664+00:00",
+  "complete": true,
+  "products": [
+    {
+      "url": "https://www.medicus-health.com/infection-control/linen-hampers.html",
+      "id": "2099M",
+      "name": "Wire Basket Carts - Folding",
+      "brand": null,
+      "sku": "2099M",
+      "price": 77.0,
+      "listPrice": null,
+      "currency": "USD",
+      "availability": "in_stock",
+      "image": "https://www.medicus-health.com/media/catalog/product/cache/74c1057f7991b4edb2bc7bdaa94de933/2/0/2099m6_cart_2.jpg",
+      "description": null,
+      "specs": {},
+      "variants": []
+    },
+    {
+      "url": "https://www.medicus-health.com/infection-control/linen-carts.html",
+      "id": "7354M3",
+      "name": "Mini Shelf Linen Cart - 3 Shelf 20\" D x 25\"W x 51.25\"H",
+      "brand": null,
+      "sku": "7354M3",
+      "price": 389.0,
+      "listPrice": null,
+      "currency": "USD",
+      "availability": "in_stock",
+      "image": "https://www.medicus-health.com/media/catalog/product/cache/74c1057f7991b4edb2bc7bdaa94de933/7/3/7354m3.jpg",
+      "description": null,
+      "specs": {},
+      "variants": []
+    }
+  ],
+  "incompleteReason": null
+}

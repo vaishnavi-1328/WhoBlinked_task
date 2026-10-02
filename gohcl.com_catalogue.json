@@ -1,0 +1,181 @@
+{
+  "site": "https://www.gohcl.com",
+  "readAt": "2026-09-30T01:41:28.822971+00:00",
+  "complete": true,
+  "products": [
+    {
+      "url": "https://www.gohcl.com/products/cultivate-red-dyed-tsb-ampules-3ml/21376",
+      "id": "21376",
+      "name": "Cultivate™ Red Dyed TSB Ampules, 3mL",
+      "brand": "Health Care Logistics",
+      "sku": "21376",
+      "price": 165.45,
+      "listPrice": null,
+      "currency": "USD",
+      "availability": "in_stock",
+      "image": "https://www.gohcl.com/cdn-cgi/image/width=494,height=494,format=auto,fit=contain/assets/3e/5c/3e5caa62-2e64-4357-b25a-765a002e46e1/21376_1.jpg",
+      "description": "<ul>\n\t<li><strong>DIY Convenience -</strong>&nbsp;A la carte option allows users to customize media fill kits to match their most complex operation as specified by USP &lt;797&gt;.</li>\n\t<li><strong>Lifelike Simulation -</strong> Glass ampules are filled with red tryptic soy broth to simulate commonly used chemotherapy agents. Protect against cuts and contamination with disposable ampule breaker, 10273, sold separately.</li>\n\t<li><strong>Smart Packaging -</strong> Lint-free trays reduce particulate shedding in the anteroom and assist pharmacy in aseptic technique when introducing items into the cleanroom.</li>\n\t<li><strong>Quantity -</strong> 20 per pack</li>\n</ul>",
+      "specs": {
+        "QuantityValue": "20 per pack"
+      },
+      "variants": []
+    },
+    {
+      "url": "https://www.gohcl.com/products/cold-packs-case/20366-31",
+      "id": "20366-31",
+      "name": "Cold Packs, Case",
+      "brand": "Health Care Logistics",
+      "sku": "20366-31",
+      "price": 94.08,
+      "listPrice": null,
+      "currency": "USD",
+      "availability": "in_stock",
+      "image": "https://www.gohcl.com/cdn-cgi/image/width=494,height=494,format=auto,fit=contain/assets/21/f6/21f6466e-0042-42f4-895a-73df96834df2/20366-31_1.jpg",
+      "description": "<p>&nbsp;</p>\n\n<ul>\n\t<li><strong>Smart Temperature Stabilization -</strong> These semi-rigid foam bricks do not change shape during freezing, thawing or transit, helping maintain consistent surface contact for reliable temperature control.</li>\n\t<li><strong>Quantity</strong>&nbsp;- 28 per case</li>\n\t<li><strong>Dimensions</strong> - 8&frac14;&quot;W x &frac34;&quot;H x 5&frac12;&quot;D</li>\n</ul>\n\n<p>&nbsp;</p>",
+      "specs": {
+        "QuantityValue": "Quantity - 28 per case",
+        "Dimensions": "8¼\"W x ¾\"H x 5½\"D"
+      },
+      "variants": []
+    },
+    {
+      "url": "https://www.gohcl.com/products/cold-packs/20366",
+      "id": "20366",
+      "name": "Cold Packs",
+      "brand": "Health Care Logistics",
+      "sku": "20366",
+      "price": 8.67,
+      "listPrice": null,
+      "currency": "USD",
+      "availability": "in_stock",
+      "image": "https://www.gohcl.com/cdn-cgi/image/width=494,height=494,format=auto,fit=contain/assets/0b/d4/0bd4158e-b27d-4428-8289-440dd7eb42cc/20366_1.jpg",
+      "description": "<p>&nbsp;</p>\n\n<ul>\n\t<li><strong>Smart Temperature Stabilization -</strong> These semi-rigid foam bricks do not change shape during freezing, thawing or transit, helping maintain consistent surface contact for reliable temperature control.</li>\n\t<li><strong>Quantity</strong>&nbsp;- 2 per pack</li>\n\t<li><strong>Dimensions</strong> - 8&frac14;&quot;W x &frac34;&quot;H x 5&frac12;&quot;D</li>\n</ul>\n\n<p>&nbsp;</p>",
+      "specs": {
+        "QuantityValue": "Quantity - 2 per pack",
+        "Dimensions": "8¼\"W x ¾\"H x 5½\"D"
+      },
+      "variants": []
+    },
+    {
+      "url": "https://www.gohcl.com/products/protect-vial-16-dram/21379",
+      "id": "21379",
+      "name": "ProTect® Vial, 16 dram",
+      "brand": "Health Care Logistics",
+      "sku": "21379",
+      "price": 55.15,
+      "listPrice": null,
+      "currency": "USD",
+      "availability": "in_stock",
+      "image": "https://www.gohcl.com/cdn-cgi/image/width=494,height=494,format=auto,fit=contain/assets/9c/89/9c89363a-9292-4865-8747-5ae869a40929/21379_1.jpg",
+      "description": "<ul>\n\t<li><strong>Automation Compatibility -</strong> Vials are ready for use with top automated dispensing systems without a machine conversion.</li>\n\t<li><strong>Systems Included -</strong> Vial and automated dispensing cabinet compatibility:<br />\n\t21377 &ndash; Parata&reg; and ScriptPro&reg;<br />\n\t21378 - Yuyama 21379 &ndash; ARxIUM&trade;, Parata&reg;, Kirby Lester, ScriptPro&reg; and Yuyama<br />\n\t21380 - ARxIUM&trade;, Parata&reg;, Kirby Lester<br />\n\t21381 &ndash; ScriptPro&reg;<br />\n\t21382- ARxIUM&trade;, Parata&reg;, Kirby Lester, ScriptPro&reg; and Yuyama<br />\n\t21383 - Not compatible</li>\n\t<li><strong>Protection Options -</strong> Reversible cap (sold separately) is a push-and-turn child-resistant cap on one side and a threaded, non-child-resistant cap on the opposite side.</li>\n\t<li><strong>Quantity -</strong>&nbsp;230 per pack</li>\n</ul>",
+      "specs": {
+        "QuantityValue": "Quantity - 230 per pack"
+      },
+      "variants": []
+    },
+    {
+      "url": "https://www.gohcl.com/products/pediatape-quick-tape/21394",
+      "id": "21394",
+      "name": "PediaTape™ Quick Tape",
+      "brand": "Health Care Logistics",
+      "sku": "21394",
+      "price": 15.0,
+      "listPrice": null,
+      "currency": "USD",
+      "availability": "in_stock",
+      "image": "https://www.gohcl.com/cdn-cgi/image/width=494,height=494,format=auto,fit=contain/assets/83/96/83963191-fc32-48d4-b627-f0305a03c07e/21394_1.jpg",
+      "description": "<ul>\n\t<li><strong>Quick Results -</strong> Color-coded, laminated pediatric emergency tape allows professionals to quickly measure length and estimate weight. Color lengths are based on the US CDC NHANES Data Set and compatible with the 2019 Broselow system.</li>\n\t<li><strong>Easy to Disinfect -</strong> Coated fiberglass material can be cleaned using a standard hospital disinfectant wipe.</li>\n\t<li><strong>Dimensions -</strong>&nbsp;60&quot;W x &frac12;&quot;H</li>\n</ul>",
+      "specs": {
+        "Dimensions": "Dimensions - 60\"W x ½\"H"
+      },
+      "variants": []
+    },
+    {
+      "url": "https://www.gohcl.com/products/hcl-stainless-steel-cart-for-pyxis-medstation-4000/21343",
+      "id": "21343",
+      "name": "HCL® Stainless Steel Cart for Pyxis™ Medstation™ 4000",
+      "brand": "Health Care Logistics",
+      "sku": "21343",
+      "price": 1050.24,
+      "listPrice": null,
+      "currency": "USD",
+      "availability": "in_stock",
+      "image": "https://www.gohcl.com/cdn-cgi/image/width=494,height=494,format=auto,fit=contain/assets/cb/19/cb191c5a-b02d-475d-8b14-b072927412fd/21343_1.jpg",
+      "description": "<ul>\n\t<li><strong>Material -</strong> 14 and 16-gauge stainless steel</li>\n\t<li><strong>Construction:</strong><br />\n\t- Provides space for a compact refrigerator above the Pyxis MedStation&trade; 4000 7- Drawer Auxiliary Unit<br />\n\t- Roll-stop edge<br />\n\t- Weight Capacity - 250 lbs. evenly distributed<br />\n\t- Casters - 4 (all swivel)<br />\n\t- Some assembly required</li>\n\t<li><img alt=\"warning\" height=\"15\" src=\"https://www.gohcl.com/assets/e9/eb/e9eb0a0f-799c-4bad-9969-53d9b1e17001/Warning.gif\" width=\"20\" />&nbsp;<strong>WARNING:</strong>&nbsp;Cancer and Reproductive Harm -&nbsp;<a href=\"http://www.p65warnings.ca.gov/\">www.P65Warnings.ca.gov</a></li>\n\t<li><strong>Dimensions -</strong> 28&frac12;&quot;W x 48&frac12;&quot;H x 26&frac34;&quot;D</li>\n</ul>",
+      "specs": {
+        "Dimensions": "28½\"W x 48½\"H x 26¾\"D"
+      },
+      "variants": []
+    },
+    {
+      "url": "https://www.gohcl.com/products/hcl-locking-box-w-removable-dividers/21325",
+      "id": "21325",
+      "name": "HCL® Locking Box w/ Removable Dividers",
+      "brand": "Health Care Logistics",
+      "sku": "21325",
+      "price": 100.49,
+      "listPrice": null,
+      "currency": "USD",
+      "availability": "in_stock",
+      "image": "https://www.gohcl.com/cdn-cgi/image/width=494,height=494,format=auto,fit=contain/assets/f2/75/f275a0af-153c-4e37-b242-f855964c6936/21325_1.jpg",
+      "description": "<ul>\n\t<li><strong>Organized Storage -</strong> Clear PETG container with 5 removable dividers keeps contents visible and sorted vertically, creating up to 6 individual compartments.</li>\n\t<li><strong>Secure -</strong> This lockable box can be used to organize temperature-sensitive medication in a refrigerator or to keep contents secure during transport.</li>\n\t<li><strong>Lock Style - </strong>Key lock with 2 keys. Units are keyed differently on a master system.</li>\n\t<li><img alt=\"warning\" height=\"15\" src=\"https://www.gohcl.com/assets/e9/eb/e9eb0a0f-799c-4bad-9969-53d9b1e17001/Warning.gif\" width=\"20\" />&nbsp;<strong>WARNING:</strong>&nbsp;Cancer and Reproductive Harm -&nbsp;<a href=\"http://www.p65warnings.ca.gov/\">www.P65Warnings.ca.gov</a></li>\n\t<li><strong>Dimensions:</strong><br />\n\tIndividual Compartments - (6) 1-1/2&quot;W when all 5 dividers are in<br />\n\tOverall - 11&quot;W x 1-3/4&quot;H x 7-1/4&quot;D</li>\n\t<li><strong>For additional keying and lock options, contact our Resource Group at 1.800.848.1633 Option 3.</strong></li>\n</ul>",
+      "specs": {
+        "Dimensions": "Individual Compartments - (6) 1-1/2\"W when all 5 dividers are in\n\tOverall - 11\"W x 1-3/4\"H x 7-1/4\"D"
+      },
+      "variants": []
+    },
+    {
+      "url": "https://www.gohcl.com/products/high-alert-labels-1-x-andfrac58-/2411",
+      "id": "2411",
+      "name": "High Alert Labels, 1½ x ⅝",
+      "brand": "Health Care Logistics",
+      "sku": "2411",
+      "price": 11.0,
+      "listPrice": null,
+      "currency": "USD",
+      "availability": "in_stock",
+      "image": "https://www.gohcl.com/cdn-cgi/image/width=494,height=494,format=auto,fit=contain/assets/5f/3c/5f3cbf29-349e-480c-8492-f65332f124c5/2411_1.jpg",
+      "description": "<ul>\n\t<li><strong>Raise Awareness -</strong> Clearly identify, distinguish and draw attention to high-alert medications. &nbsp;</li>\n\t<li><strong>Color -</strong> Labels are Yellow with Black text. &nbsp;&nbsp;</li>\n\t<li><img alt=\"warning\" height=\"15\" src=\"https://www.gohcl.com/assets/e9/eb/e9eb0a0f-799c-4bad-9969-53d9b1e17001/Warning.gif\" width=\"20\" />&nbsp;<strong>WARNING:</strong>&nbsp;Cancer&nbsp;-&nbsp;<a href=\"http://www.p65warnings.ca.gov/\">www.P65Warnings.ca.gov</a></li>\n\t<li><strong>Quantity -</strong> 500 per roll; 2 rolls per package; 1,000 labels total &nbsp;</li>\n\t<li><strong>Dimensions -</strong>1&frac12;&quot;W x ⅝&quot;H &nbsp;</li>\n</ul>",
+      "specs": {
+        "QuantityValue": "500 per roll; 2 rolls per package; 1,000 labels total",
+        "Dimensions": "Dimensions -1½\"W x ⅝\"H"
+      },
+      "variants": []
+    },
+    {
+      "url": "https://www.gohcl.com/products/sterile-fine-tip-markers-pack/21395",
+      "id": "21395",
+      "name": "Sterile Fine Tip Markers, Pack",
+      "brand": "Health Care Logistics",
+      "sku": "21395",
+      "price": 56.82,
+      "listPrice": null,
+      "currency": "USD",
+      "availability": "in_stock",
+      "image": "https://www.gohcl.com/cdn-cgi/image/width=494,height=494,format=auto,fit=contain/assets/5a/24/5a243a9a-b0a9-462e-bf5f-488b3a5fc1c0/21395_1.jpg",
+      "description": "<ul>\n\t<li><strong>Sterile Labeling -</strong> Super fine tip waterproof markers are ideal for writing on medication labels in the pharmacy and OR. They can also be used on plastic, glass, steel and similar surfaces.</li>\n\t<li><strong>Seamless Compatibility -</strong> Markers can be used with sterile labels (16079 and 16072, sold separately).</li>\n\t<li><strong>Clean Application -</strong> Ink is permanent, smudge-free, waterproof and non-toxic.</li>\n\t<li><strong>Single Use - </strong>Markers are intended for single use per surgical procedure or sterile field.</li>\n\t<li><strong>Quantity:</strong>&nbsp;25 per pack</li>\n</ul>",
+      "specs": {
+        "QuantityValue": "25 per pack"
+      },
+      "variants": []
+    },
+    {
+      "url": "https://www.gohcl.com/products/sterile-tamper-evident-luer-lock-tip-caps/17361r",
+      "id": "17361R",
+      "name": "Sterile Tamper Evident Luer Lock Tip Caps",
+      "brand": "Health Care Logistics",
+      "sku": "17361R",
+      "price": 103.88,
+      "listPrice": null,
+      "currency": "USD",
+      "availability": "in_stock",
+      "image": "https://www.gohcl.com/cdn-cgi/image/width=494,height=494,format=auto,fit=contain/assets/c1/5f/c15f2b69-03ea-4f8b-9a0f-0a3e96ab1434/17361R_4.jpg",
+      "description": "<ul>\n\t<li><strong>Tamper Evident -</strong> Individually packaged Red caps leave behind a ring upon removal to indicate use or tampering. Caps cannot be reattached.</li>\n\t<li><strong>Compatible -</strong> Caps fit all luer lock syringes.</li>\n\t<li><strong>Quantity -</strong> 100 per package</li>\n</ul>",
+      "specs": {
+        "QuantityValue": "100 per package"
+      },
+      "variants": []
+    }
+  ],
+  "incompleteReason": null
+}
