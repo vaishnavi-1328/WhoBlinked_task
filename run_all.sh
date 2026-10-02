@@ -21,6 +21,7 @@ SITES=(
   "https://www.clinton-ind.com"
   "https://www.farfetch.com"
   "https://www.mytheresa.com"
+  "https://marketlab.com"
 )
 
 for site in "${SITES[@]}"; do

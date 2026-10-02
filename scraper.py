@@ -16,7 +16,6 @@ import argparse
 import asyncio
 import dataclasses
 import json
-import sys
 from datetime import datetime, timezone
 from urllib.parse import urlparse
 

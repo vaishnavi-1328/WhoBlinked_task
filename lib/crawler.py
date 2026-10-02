@@ -93,24 +93,6 @@ async def discover_and_extract(
     return [], False, "URLs discovered but no product pages detected", "extractor_failure"
 
 
-# ── Homepage pre-flight probe ─────────────────────────────────────────────
-
-async def _probe_homepage(base: str, client: CatalogueClient) -> str:
-    """Quick check of homepage to classify access status before full crawl.
-    Returns: 'ok' | 'blocked' | 'bot_wall'
-    """
-    r = await client.get(base + "/")
-    if r is None or r.status_code in (403, 401, 503):
-        return "blocked"
-    if r.status_code == 200:
-        if any(m in r.text for m in _CHALLENGE_MARKERS):
-            return "bot_wall"
-    # 202 with sgcaptcha = a variant of bot_wall
-    if r.status_code == 202 and "sgcaptcha" in r.text:
-        return "bot_wall"
-    return "ok"
-
-
 # ── URL discovery ─────────────────────────────────────────────────────────
 
 async def _discover_urls(base: str, client: CatalogueClient) -> tuple[list[str], list[str]]:
@@ -530,6 +512,28 @@ _CHALLENGE_MARKERS = (
 )
 
 
+def _is_csr_shell(text: str) -> bool:
+    """True when the response is a JS-rendered SPA shell with no real content.
+
+    CSR shells serve 200 OK but the body contains only inline JS and an empty
+    mount point (e.g. <div id="root"></div>). Strip script/style blocks first,
+    then check for meaningful visible text.
+    """
+    if "<h1" in text:
+        return False
+    body_start = text.find("<body")
+    if body_start == -1:
+        return False
+    body = text[body_start:]
+    # Remove script and style blocks (they carry JS/CSS, not visible text)
+    body = re.sub(r"<script[^>]*>.*?</script>", " ", body, flags=re.DOTALL | re.IGNORECASE)
+    body = re.sub(r"<style[^>]*>.*?</style>", " ", body, flags=re.DOTALL | re.IGNORECASE)
+    # Strip remaining tags, collapse whitespace
+    bare = re.sub(r"<[^>]+>", " ", body)
+    bare = re.sub(r"\s+", " ", bare).strip()
+    return len(bare) < 200
+
+
 async def _fetch_html(url: str, client: CatalogueClient) -> str | None:
     r = await client.get(url)
 
@@ -538,6 +542,10 @@ async def _fetch_html(url: str, client: CatalogueClient) -> str | None:
         # Detect challenge/bot-wall pages served with HTTP 200
         if any(m in text for m in _CHALLENGE_MARKERS):
             print(f"  [stealth] challenge page detected at {url[:70]}", flush=True)
+            return await client.render_stealth(url)
+        # Detect client-side rendered SPA shells (React/Vue/Angular)
+        if _is_csr_shell(text):
+            print(f"  [stealth] CSR shell detected at {url[:70]}", flush=True)
             return await client.render_stealth(url)
         return text
 

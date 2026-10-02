@@ -15,7 +15,7 @@ for site in "${SITES[@]}"; do
   echo "========================================"
   echo "SITE: $site"
   echo "========================================"
-  /opt/anaconda3/bin/python scraper.py "$site" || echo "[WARN] error for $site"
+  python scraper.py "$site" || echo "[WARN] error for $site"
   echo ""
 done
 

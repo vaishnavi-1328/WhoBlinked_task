@@ -19,7 +19,7 @@ import json
 import re
 from bs4 import BeautifulSoup
 
-from ..models import Product, Variant
+from ..models import Product
 from ..utils import parse_price, normalise_availability, make_id, CURRENCY_SYMBOL_MAP
 
 # Elements whose class/id suggest they hold a price
@@ -256,10 +256,15 @@ def _from_heuristics(url: str, soup: BeautifulSoup) -> Product | None:
                         break
 
     # SKU / part number — only look in visible text nodes, never in <script>/<style>
+    # Only treat the node as a label when the regex match is at/near the start,
+    # i.e. the node IS the label (e.g. "SKU: 1234"), not a sentence that
+    # mentions the word SKU mid-way (e.g. "see price, SKU, and specs").
     sku = None
     for node in soup.find_all(string=SKU_LABEL_RE):
-        # skip anything inside a script or style tag
         if node.parent and node.parent.name in ("script", "style"):
+            continue
+        m = SKU_LABEL_RE.search(str(node))
+        if m and m.start() > 30:
             continue
         parent = node.parent
         nxt = parent.find_next_sibling()
