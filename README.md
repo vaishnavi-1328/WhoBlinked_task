@@ -118,20 +118,63 @@ One JSON file per site, written to the current directory as `<domain>_catalogue.
 
 ---
 
+## Setup
+
+### 1. Clone the repository
+
+```bash
+git clone <repo-url>
+cd whoBlinked-task
+```
+
+### 2. Install Python dependencies
+
+Using `uv` (recommended):
+
+```bash
+pip install uv      # if you don't have uv yet
+uv sync
+```
+
+Or with plain pip:
+
+```bash
+pip install -r requirements.txt
+```
+
+### 3. Install browser drivers
+
+Required for JavaScript-rendered sites:
+
+```bash
+playwright install chromium
+```
+
+Required for bot-walled sites (Cloudflare, etc.):
+
+```bash
+pip install camoufox
+python -m camoufox fetch
+```
+
+### 4. Configure environment variables
+
+```bash
+cp .env.example .env
+```
+
+Open `.env` and fill in your values. The only variable is `FIRECRAWL_API_KEY` — leave it blank if you don't have one (the scraper will fall back to sitemap crawling).
+
+---
+
 ## Usage
 
 ```bash
-# Install dependencies
-uv sync
-
 # Scrape a single site
 python scraper.py https://www.example.com
 
 # With options
 python scraper.py https://www.example.com --delay 1.0 --max-pages 1000 --output out.json
-
-# Use Firecrawl for faster/more complete URL discovery
-FIRECRAWL_API_KEY=fc-xxx python scraper.py https://www.example.com
 
 # Run all target sites
 bash run_all.sh
