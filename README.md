@@ -216,3 +216,134 @@ bash run_failed.sh
 **JavaScript-gated content.** Even with stealth rendering, some sites require user interaction (cookie consent dialogs, login walls, age gates) before product content is visible. The scraper does not handle these.
 
 **Firecrawl dependency is optional but impactful.** Without a Firecrawl API key, URL discovery falls back to sitemap crawling and homepage parsing. For sites with no sitemap and a heavily JavaScript-rendered homepage, this can miss large sections of the catalogue.
+
+---
+
+## Cost Per Execution (Production)
+
+This section covers the **real deployed cost** — Firecrawl API key required, scraper running on a cloud server, no local machine. All product classification and extraction is rule-based; there are **zero LLM / AI model costs**.
+
+### Services Used in Production
+
+| Service | Role | Pricing model |
+|---|---|---|
+| **Firecrawl `map()`** | URL discovery — 1 call per domain | 1 credit per URL returned |
+| **curl_cffi / httpx** | Page fetching — direct HTTP to target site | Free (your server's egress bandwidth) |
+| **Playwright (Chromium)** | JS-rendered page fallback | Free — local browser process on server |
+| **camoufox (Firefox)** | Stealth rendering for bot-walled sites | Free — local browser process on server |
+| **Cloud server** | Runs the Python process + browsers | Fixed monthly fee |
+| **LLM / AI models** | Not used | $0 |
+
+---
+
+### 1. Firecrawl Costs
+
+`map()` costs **1 credit per URL** in the returned list — one call per domain.
+
+| Plan | Credits/month | Price | Effective rate |
+|---|---|---|---|
+| Standard | 100,000 | $83/mo (annual) | $0.00083 / credit |
+| Growth | 500,000 | $333/mo (annual) | $0.00067 / credit |
+| PAYG top-up (Standard) | +2,000 per $5 | — | $0.0025 / credit |
+
+Typical credit spend per domain:
+
+| Site size | URLs discovered | Credits used | Cost (Standard rate) |
+|---|---|---|---|
+| Small (~200 URLs) | ~200 | 200 | ~$0.17 |
+| Medium (~1,000 URLs) | ~1,000 | 1,000 | ~$0.83 |
+| Large (~5,000 URLs) | ~5,000 | 5,000 | ~$4.15 |
+
+> The Standard plan's 100,000 monthly credits cover ~100 medium-sized domains or ~20 large ones before PAYG kicks in.
+
+---
+
+### 2. Server / Compute Costs
+
+The scraper spawns real browser processes (Playwright + camoufox) and runs up to 8 concurrent HTTP requests. It needs **at least 2 vCPUs and 4 GB RAM** in production to handle browser rendering without OOM errors.
+
+**AWS EC2** (us-east-1, on-demand — prices as of October 2026):
+
+| Instance | vCPU | RAM | On-demand/hr | Monthly (always-on) | Monthly (1-yr reserved) |
+|---|---|---|---|---|---|
+| t3.medium | 2 | 4 GB | $0.0418 | **~$30** | ~$18 |
+| t3.large | 2 | 8 GB | $0.0832 | **~$60** | ~$36 |
+| t3.xlarge | 4 | 16 GB | $0.1664 | **~$120** | ~$72 |
+
+**Railway** (usage-based, simpler deployment):
+
+| Plan | Included credits | Price | Compute rate |
+|---|---|---|---|
+| Hobby | $5/mo | $5/mo | ~$50/vCPU-month active |
+| Pro | $20/mo | $20/mo | ~$50/vCPU-month active |
+
+For a scraper that runs in bursts (not always-on), Railway Pro at $20/mo is sufficient for light workloads. For continuous or high-volume scraping, a reserved EC2 t3.large (~$36/mo) is more cost-effective.
+
+**Recommended production instance:** `t3.large` on AWS (1-yr reserved) — **~$36/mo** — gives 2 vCPUs and 8 GB RAM, enough headroom for parallel browser rendering.
+
+---
+
+### 3. Bandwidth / Egress Costs
+
+Each scraped page is typically 50–500 KB of HTML. Direct HTTP fetching (curl_cffi/httpx) pulls from the target site to your server.
+
+| Scale | Pages fetched | Egress estimate | AWS egress cost (first 10 GB free) |
+|---|---|---|---|
+| 10 domains × 500 pages | ~5,000 pages | ~1–2 GB | ~$0.00–$0.18 |
+| 100 domains × 500 pages | ~50,000 pages | ~10–25 GB | ~$0.90–$2.25 |
+
+Egress is a rounding error at this scale — essentially free for typical usage.
+
+---
+
+### 4. Total Production Cost Per Domain
+
+**Assumptions:** Standard Firecrawl plan ($83/mo, 100k credits), t3.large 1-yr reserved (~$36/mo), 50 domains/month processed.
+
+```
+Server cost (t3.large reserved, prorated per domain):
+  $36/mo ÷ 50 domains                              →  $0.72 / domain
+
+Firecrawl map() — medium site (~1,000 URLs):
+  1,000 credits × $0.00083                          →  $0.83 / domain
+
+Bandwidth egress (~500 pages × 200KB = 100MB):
+  ~$0.009 per domain                                →  ~$0.01 / domain
+
+LLM tokens:  None                                  →  $0.00
+
+─────────────────────────────────────────────────────────────────────────────
+Total per domain (medium site, 50 domains/mo)       ~$1.56
+─────────────────────────────────────────────────────────────────────────────
+```
+
+**Range across site sizes:**
+
+| Site size | Firecrawl | Server (prorated) | Total per domain |
+|---|---|---|---|
+| Small (~200 URLs) | ~$0.17 | ~$0.72 | **~$0.89** |
+| Medium (~1,000 URLs) | ~$0.83 | ~$0.72 | **~$1.55** |
+| Large (~5,000 URLs) | ~$4.15 | ~$0.72 | **~$4.87** |
+
+---
+
+### 5. Monthly Fixed Costs (Production Baseline)
+
+Regardless of how many domains you scrape each month, you always pay:
+
+| Cost | Amount |
+|---|---|
+| Firecrawl Standard plan | $83/mo |
+| EC2 t3.large (1-yr reserved) | ~$36/mo |
+| **Monthly baseline** | **~$119/mo** |
+
+This baseline covers up to ~100,000 Firecrawl map credits — enough for ~100 medium-sized domains before PAYG top-ups are needed.
+
+---
+
+### Summary
+
+- **Dominant cost is Firecrawl** — it scales directly with catalogue size (URLs discovered per domain).
+- **Server cost is fixed** — t3.large at ~$36/mo whether you run 1 domain or 100.
+- **No LLM spend** — all extraction is rule-based; zero token costs ever.
+- **Break-even:** at ~50 domains/month, total cost is roughly **$1.50–$5 per domain**. At 100+ domains/month, the fixed costs amortize and per-domain cost drops to **$0.83–$4.15** (pure Firecrawl credits).
